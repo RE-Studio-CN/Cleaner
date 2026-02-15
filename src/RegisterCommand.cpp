@@ -1,6 +1,7 @@
 #include "Features/Cleaner.h"
 #include "gmlib/mc/world/Level.h"
 #include "gmlib/gm/data/TpsStatus.h"
+#include "mc/server/commands/CommandOutput.h"
 struct CleanerParam {
     enum class Despawn { despawn } despawn;
     enum class Action { tps, clean, reload, mspt } action;
@@ -11,7 +12,7 @@ struct CleanerParam {
 
 void RegCleanerCommand() {
     auto& config = Cleaner::Entry::getInstance().getConfig();
-    auto& cmd    = ll::command::CommandRegistrar::getInstance().getOrCreateCommand(
+    auto& cmd    = ll::command::CommandRegistrar::getInstance(false).getOrCreateCommand(
         config.Basic.Command,
         tr("cleaner.command.cleaner"),
         CommandPermissionLevel::GameDirectors
@@ -74,7 +75,7 @@ void RegCleanerCommand() {
 };
 
 void RegVoteCommand() {
-    auto& cmd = ll::command::CommandRegistrar::getInstance().getOrCreateCommand(
+    auto& cmd = ll::command::CommandRegistrar::getInstance(false).getOrCreateCommand(
         Cleaner::Entry::getInstance().getConfig().VoteClean.VoteCleanCommand,
         tr("cleaner.command.voteclean"),
         CommandPermissionLevel::Any

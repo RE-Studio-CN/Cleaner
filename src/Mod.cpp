@@ -30,8 +30,8 @@ bool Entry::enable() {
     Cleaner::ListenEvents();
     RegisterCommands();
     Cleaner::loadCleaner();
-    getSelf().getLogger().info("Cleaner Loaded!");
-    getSelf().getLogger().info("Author: GroupMountain");
+    getSelf().getLogger().info("Cleaner 魔改版已加载！");
+    getSelf().getLogger().info("Author: GroupMountain & PuceLi");
     getSelf().getLogger().info("Repository: https://github.com/GroupMountain/Cleaner");
     return true;
 }
