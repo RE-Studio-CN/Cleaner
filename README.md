@@ -1,6 +1,6 @@
-# Cleaner - RE Studio 魔改版
+# Cleaner - RE Studio 版
 
-服务器实体清理插件
+服务器实体清理插件，基于 [GroupMountain/Cleaner](https://github.com/GroupMountain/Cleaner) 的魔改
 
 ---
 
